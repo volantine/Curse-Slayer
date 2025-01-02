@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://qlf6xxqu10f8"]
+
+[ext_resource type="Script" path="res://scripts/controls.gd" id="1_41m6k"]
+[ext_resource type="FontFile" uid="uid://uxbmwspwm8su" path="res://art/Uncial_WIP.ttf" id="1_x67ih"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ggvl"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2dbij"]
+bg_color = Color(0.576471, 0.121569, 0.0705882, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wfbmv"]
+bg_color = Color(0.341176, 0.0705882, 0.0431373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lxjjq"]
+bg_color = Color(0.439216, 0.0901961, 0.054902, 1)
+
+[node name="Controls" type="Node2D"]
+script = ExtResource("1_41m6k")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1150.0
+offset_bottom = 647.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0ggvl")
+
+[node name="BackButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 456.0
+offset_right = 664.0
+offset_bottom = 504.0
+theme_override_fonts/font = ExtResource("1_x67ih")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxFlat_2dbij")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wfbmv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_lxjjq")
+text = "Back
+"
+
+[node name="Title" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 168.0
+offset_right = 863.0
+offset_bottom = 296.0
+theme_override_fonts/font = ExtResource("1_x67ih")
+theme_override_font_sizes/font_size = 122
+text = "Controls"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ControlList" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 256.0
+offset_right = 704.0
+offset_bottom = 448.0
+theme_override_fonts/font = ExtResource("1_x67ih")
+theme_override_font_sizes/font_size = 30
+text = "Movement - WASD
+Attack - G
+Heal - H
+Action - J
+"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Panel/BackButton" to="." method="_on_back_button_pressed"]

@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkb1k5gj6qlul"]
+
+[ext_resource type="Script" path="res://scenes/MainMenu.gd" id="1_wdff2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rmd15"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_wdff2")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 964.0
+offset_bottom = 535.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rmd15")
+
+[node name="PlayButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 272.0
+offset_right = 548.0
+offset_bottom = 318.0
+text = "Play"
+
+[node name="ExitButton" type="Button" parent="Panel"]
+offset_left = 411.0
+offset_top = 341.0
+offset_right = 548.0
+offset_bottom = 387.0
+text = "Exit"
+
+[connection signal="pressed" from="Panel/PlayButton" to="." method="_on_play_button_pressed"]

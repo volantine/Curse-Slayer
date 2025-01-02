@@ -1,0 +1,99 @@
+[gd_scene load_steps=13 format=3 uid="uid://bkb1k5gj6qlul"]
+
+[ext_resource type="Script" path="res://scripts/MainMenu.gd" id="1_taj36"]
+[ext_resource type="FontFile" uid="uid://uxbmwspwm8su" path="res://art/Uncial_WIP.ttf" id="2_8tq8e"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rmd15"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1wt6x"]
+bg_color = Color(0.576471, 0.121569, 0.0705882, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wdybh"]
+bg_color = Color(0.341176, 0.0705882, 0.0431373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kpp2x"]
+bg_color = Color(0.439216, 0.0901961, 0.054902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3gglv"]
+bg_color = Color(0.576471, 0.121569, 0.0705882, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_50tkl"]
+bg_color = Color(0.341176, 0.0705882, 0.0431373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tghsl"]
+bg_color = Color(0.439216, 0.0901961, 0.054902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xhuis"]
+bg_color = Color(0.576471, 0.121569, 0.0705882, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ye4mi"]
+bg_color = Color(0.341176, 0.0705882, 0.0431373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_chf80"]
+bg_color = Color(0.439216, 0.0901961, 0.054902, 1)
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_taj36")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1150.0
+offset_bottom = 647.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rmd15")
+metadata/_edit_lock_ = true
+
+[node name="PlayButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 328.0
+offset_right = 664.0
+offset_bottom = 376.0
+theme_override_fonts/font = ExtResource("2_8tq8e")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxFlat_1wt6x")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wdybh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_kpp2x")
+text = "Play"
+
+[node name="ExitButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 456.0
+offset_right = 664.0
+offset_bottom = 504.0
+theme_override_fonts/font = ExtResource("2_8tq8e")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxFlat_3gglv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_50tkl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tghsl")
+text = "Exit"
+
+[node name="ControlsButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 392.0
+offset_right = 664.0
+offset_bottom = 440.0
+theme_override_fonts/font = ExtResource("2_8tq8e")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxFlat_xhuis")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ye4mi")
+theme_override_styles/normal = SubResource("StyleBoxFlat_chf80")
+text = "Controls
+"
+
+[node name="Title" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 168.0
+offset_right = 863.0
+offset_bottom = 296.0
+theme_override_fonts/font = ExtResource("2_8tq8e")
+theme_override_font_sizes/font_size = 126
+text = "Curse Slayer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Panel/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Panel/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Panel/ControlsButton" to="." method="_on_controls_button_pressed"]

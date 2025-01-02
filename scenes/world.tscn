@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://cn8caoj8xaacf"]
+
+[ext_resource type="PackedScene" uid="uid://dhord3uf3rhbn" path="res://scenes/Player.tscn" id="1_raphq"]
+[ext_resource type="Script" path="res://scripts/Game.gd" id="1_tc5lv"]
+[ext_resource type="PackedScene" uid="uid://c3t4iwp141vir" path="res://scenes/Enemy.tscn" id="2_2q6t1"]
+[ext_resource type="PackedScene" uid="uid://cddcpadry6jae" path="res://scenes/CursedPerson.tscn" id="4_w1l7s"]
+
+[node name="World" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_tc5lv")
+
+[node name="Player" parent="." instance=ExtResource("1_raphq")]
+position = Vector2(412, 276)
+
+[node name="Enemy" parent="." instance=ExtResource("2_2q6t1")]
+position = Vector2(312, 277)
+
+[node name="CursedPerson" parent="." instance=ExtResource("4_w1l7s")]
+position = Vector2(207, 280)
